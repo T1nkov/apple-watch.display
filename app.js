@@ -1,8 +1,14 @@
-function getobj() {
-  const date = new Date();
-
-  return obj;
-}
+let unlockBtn = document.querySelector(".unlockBtn");
+const showDisplay = document.querySelector(".inside");
+unlockBtn.onclick = function () {
+  if (showDisplay.style.display == "none") {
+    showDisplay.style.display = "flex";
+    showDisplay.style.transition = "2s ease-in-out;";
+  } else if (showDisplay.style.display == "flex") {
+    showDisplay.style.display = "none";
+    showDisplay.style.transition = "0.5s forwards";  
+  }
+};
 
 function updateDate() {
   const date = new Date();
@@ -20,7 +26,7 @@ function updateDate() {
           this.hour + ":" + this.min + ":" + this.sec;
       }
 
-      document.querySelector(".year").innerHTML = 'since.'+this.year;
+      document.querySelector(".year").innerHTML = "since." + this.year;
     },
   };
   obj.update();
